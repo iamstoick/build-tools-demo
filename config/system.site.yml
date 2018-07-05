@@ -1,0 +1,14 @@
+uuid: 5093e8ac-376c-4b09-9660-ea41439b5e67
+name: build-tools-demo
+mail: gerald@getpantheon.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI
