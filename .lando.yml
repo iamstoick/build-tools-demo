@@ -1,0 +1,6 @@
+name: build-tools-demo
+recipe: pantheon
+config:
+  framework: drupal8
+  site: build-tools-demo
+  id: 298d3692-c016-408b-972b-854d0b0302a9
