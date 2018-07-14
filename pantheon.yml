@@ -17,7 +17,7 @@ workflows:
       - 
         type: webphp
         description: Post to Slack after deploy
-        script: private/scripts/slack_notification.php
+        script: private/scripts/slack/slack_notification.php
   sync_code:
     after:
       - 
@@ -34,5 +34,5 @@ workflows:
       - 
         type: webphp
         description: Someone is clearing the cache again
-        script: private/scripts/slack_notification.php
+        script: pprivate/scripts/slack/slack_notification.php
 
