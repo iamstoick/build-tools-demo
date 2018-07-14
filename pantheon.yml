@@ -23,6 +23,7 @@ workflows:
         description: Push changes back to GitHub if needed
         script: private/scripts/quicksilver/quicksilver-pushback/push-back-to-github.php
       -
+        # Notify in Slack
         type: webphp
         description: Post to Slack after site creation
         script: private/scripts/slack/slack_notification.php
