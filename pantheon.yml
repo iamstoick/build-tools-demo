@@ -12,8 +12,18 @@ workflows:
         type: webphp
         description: 'Run composer install & drupal-scaffold'
         script: private/scripts/deploy_product/composer-install.php
+      -
+        type: webphp
+        description: Post to Slack after site creation
+        script: private/scripts/slack/slack_notification.php
   sync_code:
     after:
-      - type: webphp
+      - 
+        type: webphp
         description: Push changes back to GitHub if needed
         script: private/scripts/quicksilver/quicksilver-pushback/push-back-to-github.php
+      -
+        type: webphp
+        description: Post to Slack after site creation
+        script: private/scripts/slack/slack_notification.php
+
