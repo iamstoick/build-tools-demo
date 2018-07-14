@@ -8,31 +8,34 @@ workflows:
         type: webphp
         description: 'Run composer prepare-for-pantheon'
         script: private/scripts/deploy_product/prepare-for-pantheon.php
+        
       -
         type: webphp
         description: 'Run composer install & drupal-scaffold'
         script: private/scripts/deploy_product/composer-install.php
+
   deploy:
     after:
-      - 
-        type: webphp
+      - type: webphp
         description: Post to Slack after deploy
         script: private/scripts/slack/slack_notification.php
+
   sync_code:
     after:
       - 
         type: webphp
         description: Push changes back to GitHub if needed
         script: private/scripts/quicksilver/quicksilver-pushback/push-back-to-github.php
+
       -
         # Notify in Slack
         type: webphp
         description: Post to Slack after site creation
         script: private/scripts/slack/slack_notification.php
+
   clear_cache:
     after:
-      - 
-        type: webphp
+      - type: webphp
         description: Someone is clearing the cache again
         script: pprivate/scripts/slack/slack_notification.php
 
